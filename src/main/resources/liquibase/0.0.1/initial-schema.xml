@@ -1,0 +1,50 @@
+<databaseChangeLog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+
+    <changeSet id="create-payment" author="Zawar">
+    <preConditions onFail="MARK_RAN">
+        <not>
+            <tableExists tableName="payment"/>
+        </not>
+    </preConditions>
+    <createTable tableName="payment">
+        <column name="transaction_id" type="uuid">
+        <constraints primaryKey="true" primaryKeyName="payment_id_pk"/>
+        </column>
+        <column name="payer_id" type="uuid"/>
+        <column name="payee_id" type="uuid"/>
+        <column name="amount" type="double"/>
+        <column name="currency" type="varchar"/>
+        <column name="preffered_gateway" type="varchar"/>
+        <column name="success" type="bool"/>
+    </createTable>
+        <createTable tableName="payer_id">
+            <column name="id" type="uuid">
+            <constraints primaryKey="true" primaryKeyName="payer_id_pk"/>
+            </column>
+            <column name="name" type="varchar"/>
+            <column name="email" type="varchar"/>
+
+        </createTable>
+        <createTable tableName="payee_id">
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" primaryKeyName="payee_id_pk"/>
+            </column>
+            <column name="name" type="varchar"/>
+            <column name="email" type="varchar"/>
+
+        </createTable>
+        <createTable tableName="currency">
+            <column name="name" type="varchar">
+                <constraints primaryKey="true" primaryKeyName="currency_id_pk"/>
+            </column>
+            <column name="code" type="varchar"/>
+            <column name="country" type="varchar"/>
+        </createTable>
+    </changeSet>
+
+
+</databaseChangeLog>

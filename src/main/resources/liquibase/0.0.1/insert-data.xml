@@ -1,0 +1,37 @@
+<!-- TODO: Remove as this is just a sample -->
+<databaseChangeLog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet id="insert-data" author="zawar">
+        <insert tableName="payer_id">
+            <column name="id" value="9d56f6f8-6079-4b78-984e-2575ca922a78"/>
+            <column name="name" value="user1"/>
+        </insert>
+        <insert tableName="payer_id">
+            <column name="id" value="466340F6-ACFE-4E7E-8971-68BEFF1D1E6D"/>
+            <column name="name" value="user2"/>
+        </insert>
+        <insert tableName="payer_id">
+            <column name="id" value="B8256033-4B96-41B0-954B-A35D810548E4"/>
+            <column name="name" value="user3"/>
+        </insert>
+        <insert tableName="payee_id">
+            <column name="id" value="36E63337-7FB9-4407-A0FA-D23A9C275D23"/>
+            <column name="name" value="store1"/>
+        </insert>
+        <insert tableName="payee_id">
+            <column name="id" value="33F00773-9CCD-448E-B7C0-DA61E21F997A"/>
+            <column name="name" value="store2"/>
+        </insert>
+        <insert tableName="payee_id">
+            <column name="id" value="689FC5AF-C40A-4F67-8F67-1CEABA1B45AA"/>
+            <column name="name" value="store3"/>
+        </insert>
+        <insert tableName="currency">
+            <column name="name" value="usd"/>
+            <column name="code" value="$"/>
+            <column name="country" value="USA"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
